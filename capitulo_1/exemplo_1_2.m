@@ -1,4 +1,5 @@
-% Exemplo 1.2  Gera uma onda senoidal discreta de 2 Hz usando MATLAB.
+% Exemplo 1.2  
+% Gera uma onda senoidal discreta de 2 Hz usando MATLAB.
 % Assume um tempo de amostragem de 0.01 seg. e use pontos suficientes para tornar
 % a onda senoidal 1 seg. de comprimento; i.e., o tempo total, TT deve ser 1 seg.
 
