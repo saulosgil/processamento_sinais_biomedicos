@@ -42,8 +42,21 @@ grid on;
 % O resultado das múltiplas correlações cruzadas é mostrado na Figura 2.16, e 
 % surge uma estrutura interessante. Algumas frequências apresentam correlação 
 % muito maior entre a senoide e o EEG. Um pico particularmente forte é observado 
-% na região de 7–9 Hz, indicando a presença de um padrão oscilatório conhecido 
+% na região de 2.5–7.5 Hz, indicando a presença de um padrão oscilatório conhecido 
 % como onda alfa. 
 % 
 % A transformada de Fourier é um método mais eficiente para obter 
 % a mesma informação, como mostrado no Capítulo 3.
+
+% O que o gráfico mostra
+
+% A atividade está concentrada abaixo de ~10 Hz. Entre 0 e 9,5 Hz a correlação fica quase toda ]
+% acima de 0,13, com picos entre 0,16 e 0,24. Logo depois de 9,5 Hz há uma queda abrupta, 
+% e de 10 a 25 Hz a curva oscila em um patamar baixo, entre 0,05 e 0,11, sem nenhum pico relevante. 
+% Em outras palavras, esse EEG é dominado por ritmos lentos, e há pouca atividade beta (13–30 Hz).
+
+% Dentro da faixa baixa aparecem três regiões de destaque:
+    % 2,5 a 3,75 Hz (delta/teta baixo): dois picos de ~0,23. Atividade lenta pode refletir sonolência, 
+    %   mas também artefatos como movimentos oculares e piscadas, que costumam contaminar essa faixa.
+    % 6,25 a 6,75 Hz (fronteira teta/alfa): os picos mais altos do gráfico, ~0,24.
+    % 8 a 9 Hz (alfa): picos secundários de ~0,165, que correspondem à onda alfa citada no livro.
