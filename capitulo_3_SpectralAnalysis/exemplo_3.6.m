@@ -101,3 +101,48 @@ ylabel('Power Spectrum')
 % baixos, com um leve aumento em função da frequência. O espectro obtido durante a meditação exibe um pico 
 % acentuado em torno de 0,12 Hz, o que indica a presença de um processo ressonante nessas frequências 
 % — correspondendo a um intervalo de tempo de aproximadamente 8 segundos. 
+
+
+%%%%%%%%%%%% EXPLICAÇÃO EXTRA %%%%%%%%%%%%
+% As duas figuras mostram o espectro de potência da variabilidade da frequência cardíaca (VFC), ou seja, como as oscilações da 
+% FC se distribuem entre as frequências, em repouso normal (esquerda) e durante meditação (direita). Como a FC varia lentamente, 
+% as frequências envolvidas são muito baixas: 0,1 Hz corresponde a um ciclo a cada 10 segundos.
+% Condição normal
+% A potência está espalhada, sem um ritmo dominante bem definido. Ela se concentra nas frequências mais baixas, abaixo de ~0,05 Hz, 
+% e vai diminuindo à medida que a frequência aumenta. O maior pico, em ~0,017 Hz, corresponde a uma oscilação com período de ~60 s, 
+% mas ele é apenas um entre vários picos de altura parecida. Esse padrão é típico da VFC em repouso: a FC flutua de forma irregular, 
+% influenciada por vários mecanismos ao mesmo tempo, como a termorregulação, o sistema renina-angiotensina e o barorreflexo, sem que 
+% nenhum deles domine.
+% Isso é coerente com a autocovariância da FC em repouso que você viu antes: correlação entre batimentos próximos que decai 
+% suavemente, sem picos repetidos, ou seja, sem periodicidade forte.
+
+% Meditação
+% O padrão é completamente diferente. Quase toda a potência se concentra em um pico estreito e dominante em ~0,105 Hz, que corresponde
+%  a um período de ~9,5 s. A FC passa a oscilar de forma regular, subindo e descendo a cada ~10 s. A potência nas frequências muito 
+%  baixas praticamente desaparece.
+% A explicação fisiológica mais aceita é a respiração lenta. Nas técnicas de meditação desses dados, a respiração desacelera para 
+% cerca de 6 ciclos por minuto, ou seja, 0,1 Hz. A FC acompanha a respiração (aumenta na inspiração e diminui na expiração), um 
+% fenômeno chamado arritmia sinusal respiratória. Por volta de 0,1 Hz, esse efeito entra em ressonância com o barorreflexo, que 
+% tem frequência natural próxima disso. O resultado são oscilações da FC muito amplas e regulares, que aparecem como esse pico 
+% concentrado.
+% Cuidado ao comparar as escalas
+% Os eixos verticais são diferentes: ×10⁹ na condição normal e ×10¹⁰ na meditação. O pico da meditação (~2,9 × 10¹⁰) é cerca de 5 
+% vezes maior que o maior pico da condição normal (~6 × 10⁹). Ou seja, a meditação não só reorganiza a potência em uma única 
+% frequência, como também aumenta muito a amplitude das oscilações.
+% Essa comparação de valores absolutos tem uma ressalva. Como o espectro foi calculado sem normalização, a potência cresce com o 
+% número de amostras. Se os dois registros tiverem durações diferentes, parte da diferença de escala vem só do comprimento dos dados. 
+% Para uma comparação rigorosa, normalize dividindo por N, ou compare a distribuição relativa da potência entre as faixas.
+
+% Relação com as bandas clássicas da VFC
+% Na análise de VFC, o espectro costuma ser dividido em três bandas:
+% •	VLF (< 0,04 Hz): onde está a maior parte da potência na condição normal;
+% •	LF (0,04–0,15 Hz): onde está o pico dominante da meditação;
+% •	HF (0,15–0,4 Hz): onde normalmente aparece a respiração espontânea, com frequências de ~0,2 a 0,3 Hz.
+% Como o eixo foi limitado a 0,15 Hz, a banda HF ficou de fora. Em repouso normal, é provável que exista um pico respiratório nessa 
+% faixa que não aparece no gráfico. Se ampliar o eixo para axis([0 0.4 ...]), você pode comparar também essa região. Na meditação, o 
+% que acontece é que a respiração sai da HF e entra na LF, porque ficou mais lenta.
+% Em resumo
+% Em repouso, a FC tem flutuações lentas e irregulares, com potência distribuída entre várias frequências baixas. Na meditação, a 
+% respiração lenta impõe uma oscilação regular de ~0,1 Hz, que concentra a potência em um único pico muito mais intenso. O exemplo 
+% mostra como o espectro de potência revela mudanças na dinâmica de um sinal fisiológico que seriam difíceis de perceber olhando só 
+% para a série temporal.
