@@ -1,0 +1,32 @@
+
+stimuliData = Signal x Electrode x Trial
+
+Electrodes  1 - Oz ;    2 - O2;     3 - O1;     4 - PO4;
+            5 - POz;    6 - PO3;    7 - P2;     8 - Pz;
+            9 - P1;    10 - CPz;   11 - P1;    12 - Cz;
+           13 - C1;    14 - FCz;   15 - CP2;   16 - CP1;
+
+Classes  1 - 10Hz
+	 2 - 11Hz
+	 3 - 12Hz
+	 4 - 13Hz
+
+Sample Rate = 256Hz
+
+Gender
+S01 - M
+S02 - M
+S03 - F
+S04 - F
+S05 - F
+S06 - F
+S07 - F
+S08 - F
+S09 - F
+S10 - M 
+S11 - F
+S12 - M
+S13 - F
+S14 - M
+S15 - F
+
