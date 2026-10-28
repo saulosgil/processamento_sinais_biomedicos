@@ -5,6 +5,9 @@
 % noise-free VER from a selected individual VER and estimate the noise in each record. Then determine the noise 
 % in the ensemble average, and compare the reduction in standard deviation produced by averaging with that predicted 
 % theoretically.
+clear all;
+close all;
+clc;
 
 % Example 4.1 Example of ensemble averaging
 load ver;                       % Get visual evoked response data;
