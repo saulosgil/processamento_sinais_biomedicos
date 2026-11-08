@@ -21,9 +21,9 @@ fc = 300/fs;                            % Cutoff frequency (normalized)
 L = [18 66];                            % Filter lengths requested
 
 for m = 1:2
-    k  = -floor(L(m)/2):-1;             % Construct k for negative b[k];
+    k = -floor(L(m)/2):-1;             % Construct k for negative b[k];
     b = sin(2*pi*fc*k)./(pi*k);         % Construct negative b[k]
-    b =  [b 2*fc, fliplr(b)];           % Rest of b
+    b = [b 2*fc, fliplr(b)];           % Rest of b
     H = fft(b,N);                       % Calculate spectrum 
 
     subplot(1,2,m);                     % Plot magnitude spectrum
