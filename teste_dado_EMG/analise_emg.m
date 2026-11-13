@@ -256,10 +256,12 @@ figure('Name', 'Domínio do tempo - trecho', 'Color', 'w');
 subplot(3,1,1);
 plot(t(idx_trecho), emg_filt(idx_trecho), 'b'); ylabel('mV');
 title('Filtrado'); grid on;
+
 subplot(3,1,2);
 plot(t(idx_trecho), emg_ret(idx_trecho), 'b'); hold on;
 plot(t(idx_trecho), emg_env(idx_trecho), 'r', 'LineWidth', 2);
 ylabel('mV'); title('Retificado (azul) e envoltório linear (vermelho)'); grid on;
+
 subplot(3,1,3);
 plot(t(idx_trecho), emg_rms(idx_trecho), 'k', 'LineWidth', 1.5);
 ylabel('mV'); xlabel('Tempo (s)'); title('RMS móvel'); grid on;
