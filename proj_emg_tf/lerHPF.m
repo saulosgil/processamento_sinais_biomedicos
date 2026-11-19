@@ -77,11 +77,11 @@ hpf.nomes = cellfun(@(x) x{1}, t, 'UniformOutput', false);
 t = regexp(xml, '<\w*(?:Frequency|Rate)\w*>([\d.,Ee+-]+)<', 'tokens');
 hpf.fs = cellfun(@(x) str2double(strrep(x{1}, ',', '.')), t);
 
-fprintf('%d canal(is) de dados lido(s):\n', numel(hpf.dados));
+% fprintf('%d canal(is) de dados lido(s):\n', numel(hpf.dados));               % Comentado para não poluir a saída do script principal
 for k = 1:numel(hpf.dados)
     nome = '';
     if k <= numel(hpf.nomes), nome = hpf.nomes{k}; end
-    fprintf('  canal %d %-25s %d amostras\n', k, nome, numel(hpf.dados{k}));
+    % fprintf('  canal %d %-25s %d amostras\n', k, nome, numel(hpf.dados{k})); % Comentado para não poluir a saída do script principal
 end
 end
 

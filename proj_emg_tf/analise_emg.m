@@ -28,8 +28,6 @@ clc;         % limpa a janela de comandos
 %% ------------------------------------------------------------------------
 %  PARÂMETROS DA ANÁLISE (altere aqui)
 %  ------------------------------------------------------------------------
-arquivo = 'Sub-C005_tempo-0_tarefa-cvim_braço-nt_medida-torque_Plot_and_Store_Rep_1.0.hpf';
-
 % Canal de EMG a ser analisado. Neste arquivo os canais de EMG são:
 %   1 = R BICEPS BRACHII (EMG 1)     11 = L BICEPS BRACHII (EMG 2)
 %  21 = R TRICEPS BRACHII (EMG 3)    31 = L TRICEPS BRACHII (EMG 4)
@@ -69,7 +67,13 @@ trecho = [140 160];    % (s)
 %% ------------------------------------------------------------------------
 %  1. LEITURA DO ARQUIVO .HPF
 %  ------------------------------------------------------------------------
-hpf = lerHPF(arquivo);            % lê todos os canais do arquivo
+% arquivo = 'Sub-C005_tempo-0_tarefa-cvim_braço-nt_medida-torque_Plot_and_Store_Rep_1.0.hpf';
+% arquivo = 'Sub-C005_tempo-4_tarefa-cvim_braço-nt_medida-emg_Plot_and_Store_Rep_1.0.hpf';
+
+% nome_arquivo = 'Sub-C005_tempo-0_tarefa-cvim_braço-t_medida-torque_Plot_and_Store_Rep_1.0.hpf';
+arquivo = 'Sub-C005_tempo-0_tarefa-cvim_braço-t_medida-emg_Plot_and_Store_Rep_1.0.hpf';
+
+hpf = lerHPF(arquivo); 
 
 % O XML de cada canal traz o nome, a unidade e a frequência de amostragem.
 % Extraímos esses campos canal a canal para não depender da ordem do vetor
