@@ -4,8 +4,8 @@ clc;
 
 % Paramêtros do arquivo de dados
 % Canal de EMG a ser analisado.
-canal = 1;  % R BICEPS BRAQUIAL
-% canal = 21;  % R TRICEPS BRAQUIAL
+% Escolha o canal desejado: 1 = R BICEPS BRAQUIAL | 21 = R TRICEPS BRAQUIAL
+canal   = 1;           
 
 % Parâmetros do espectro de potência (método de Welch)
 janela_psd = 0.5;      % duração de cada janela de Hamming (s)
@@ -88,6 +88,12 @@ for i = 1:nSuj
 
         % Remove o nível DC (offset) subtraindo a média do sinal
         emg_bruto = emg_bruto - mean(emg_bruto);
+        % Remove picos isolados: compara cada amostra com a mediana local
+        
+        % (janela de ~50 ms) e substitui as que passam de 6 desvios (MAD)
+        jan_out   = round(0.05 * fs);
+        emg_bruto = filloutliers(emg_bruto, 'linear', 'movmedian', jan_out, ...
+                         'ThresholdFactor', 6);
 
         % Vetor de tempo (s)
         N = numel(emg_bruto);
