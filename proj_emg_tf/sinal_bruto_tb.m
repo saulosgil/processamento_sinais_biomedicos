@@ -5,7 +5,7 @@ clc;
 % Paramêtros do arquivo de dados
 % Canal de EMG a ser analisado.
 % Escolha o canal desejado: 1 = R BICEPS BRAQUIAL | 21 = R TRICEPS BRAQUIAL
-canal   = 21;           
+canal   = 11;           
 
 % Parâmetros do espectro de potência (método de Welch)
 janela_psd = 0.5;      % duração de cada janela de Hamming (s)

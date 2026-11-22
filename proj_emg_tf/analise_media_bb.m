@@ -133,8 +133,8 @@ errorbar(1:2, media,zeros(size(dp)), dp, 'k', 'LineStyle', 'none', 'LineWidth', 
 xticks(1:2); 
 xticklabels({'Tempo 0', 'Tempo 4'});
 ylabel('RMS pico da CVIM (mV)');
-ylim([0 0.24]);
-yticks(0:0.05:0.30);
+ylim([0 2.0]);
+yticks(0:0.25:2.0);
 title('RMS pico antes e após o treinamento de força');
 grid on;
 
